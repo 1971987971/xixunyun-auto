@@ -21,7 +21,7 @@ function login() {
       } else {
         reject()
       }
-    })
+    }).catch(() => {})
   })
 }
 
@@ -34,7 +34,7 @@ function sign(token) {
       wechatSend('习讯云签到提交', res.data.message)
       // sendEmail('习讯云签到提交', res.data.message)
     }
-  })
+  }).catch(() => {})
 }
 
 //日报提交
@@ -49,9 +49,9 @@ function studentReportInfo(token) {
         console.log(res.data.code + ',' + res.data.message)
         wechatSend('习讯云日报提交', res.data.message)
         // sendEmail('习讯云日报提交', res.data.message)
-      })
+      }).catch(() => {})
     }
-  })
+  }).catch(() => {})
 }
 
 //推送微信通知
@@ -66,5 +66,5 @@ function wechatSend(type, msg) {
     if (res && res.data && res.data.code === 200) {
       console.log(type + ',发送微信推送成功')
     }
-  })
+  }).catch(() => {})
 }
