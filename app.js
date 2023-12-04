@@ -16,7 +16,6 @@ login().then((token) => {
 function login() {
   return new Promise((resolve, reject) => {
     axios.post(loginApi, data, { headers }).then((res) => {
-      console.log(res.data);
       if (res && res.data && res.data.data) {
         resolve(res.data.data.token)
       } else {
