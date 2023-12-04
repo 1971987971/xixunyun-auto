@@ -15,7 +15,7 @@ login().then((token) => {
 //登录
 function login() {
   return new Promise((resolve, reject) => {
-    console.log('params', JSON.stringify(data));
+    console.log('params', data);
     axios.post(loginApi, data, { headers }).then((res) => {
       console.log(res.data);
       if (res && res.data && res.data.data) {
