@@ -8,14 +8,16 @@ const loginApi = qs.loginApi
 
 // 签到并提交每日体温报告 
 login().then((token) => {
-  sign(token)
+  // sign(token)
   // studentReportInfo(token)
 })
 
 //登录
 function login() {
   return new Promise((resolve, reject) => {
+    console.log('params', data);
     axios.post(loginApi, data, { headers }).then((res) => {
+      console.log(res.data);
       if (res && res.data && res.data.data) {
         resolve(res.data.data.token)
       } else {
